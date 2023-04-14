@@ -3,6 +3,9 @@ extends Node2D
 onready var transition = $UI/Transition
 onready var tilemap = $WorldMap
 
+onready var marca_img = $"Location-pointer-16X16"
+onready var marca_area = $"Location-Area"
+
 func _ready():
 	#$"Fase1".visible = true
 	#$"Fase1+".visible = false
@@ -14,6 +17,12 @@ func _ready():
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("pause"):
 		var _error = get_tree().change_scene("res://UI/Menu.tscn")
+	
+	elif Input.is_action_just_pressed("ui_accept"):
+		# Move the sprite and collision shape to the player position
+		var player = get_node("Player")
+		marca_img.position = player.position
+		marca_area.position = player.position
 
 func calculate_switch_blocks():
 	if Global.block_switch:

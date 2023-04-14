@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://World/Background.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/DeathTrigger/DeathTrigger.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Background/Bloqueado/Revisao.png" type="Texture" id=21]
 [ext_resource path="res://Background/Bloqueado/Fase1.png" type="Texture" id=22]
 [ext_resource path="res://Background/Conteúdos/1.png" type="Texture" id=23]
+[ext_resource path="res://World-Bloqueado/location-pointer-16x16.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFont" id=13]
 size = 72
@@ -842,6 +843,13 @@ position = Vector2( -377, -577 )
 [node name="Trampoline41" parent="." instance=ExtResource( 19 )]
 visible = false
 position = Vector2( -377, -546 )
+
+[node name="Location-pointer-16X16" type="Sprite" parent="."]
+position = Vector2( -277, 562 )
+texture = ExtResource( 24 )
+
+[node name="Location-Area" parent="." instance=ExtResource( 16 )]
+position = Vector2( -278, 562 )
 
 [connection signal="body_entered" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_entered2"]
 [connection signal="body_entered" from="Objects/Danger3" to="Player" method="_on_Danger3_body_entered"]
