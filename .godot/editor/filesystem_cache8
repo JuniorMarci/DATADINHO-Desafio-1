@@ -1,0 +1,149 @@
+2a60927148abd1d33b818b535e306557
+::res://::1678817926
+export_presets.cfg::TextFile::-1::1677328959::0::1::::<><>::
+::res://autosoma/::1678280933
+autosoma.apple-touch-icon.png::::-1::0::0::1::::<><>::
+autosoma.icon.png::::-1::0::0::1::::<><>::
+autosoma.png::::-1::0::0::1::::<><>::
+::res://Background/::1678280933
+Fase1+.png::::-1::0::0::1::::<><>::
+Fase1.png::::-1::0::0::1::::<><>::
+::res://Fonts/::1678280933
+Font.tres::::-1::1677328960::0::1::::<><>::
+license.txt::TextFile::-1::1677328960::0::1::::<><>::
+OFL.txt::TextFile::-1::1677328961::0::1::::<><>::
+VT323-Regular.ttf::::-1::0::0::0::::<><>::
+yoster.ttf::::-1::0::0::0::::<><>::
+::res://Global/::1678280933
+Global.gd::GDScript::-1::1677328960::0::1::::<>RefCounted<>::
+::res://Objects/::1678280933
+::res://Objects/BlockSwitch/::1678280933
+Switch.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/BlockSwitch/Assets/::1678280933
+Lever1.png::::-1::0::0::1::::<><>::
+Lever2.png::::-1::0::0::1::::<><>::
+Switch.gd::GDScript::-1::1677328979::0::1::::<>RefCounted<>::
+::res://Objects/BoostGem/::1678280933
+BoostGem.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/BoostGem/Assets/::1678280933
+Boost2.wav::::-1::0::0::1::::<><>::
+Boost3.wav::::-1::0::0::1::::<><>::
+Boost4.wav::::-1::0::0::1::::<><>::
+Boost.wav::::-1::0::0::1::::<><>::
+BoostGem1.png::::-1::0::0::1::::<><>::
+BoostGem2.png::::-1::0::0::1::::<><>::
+BoostGem3.png::::-1::0::0::1::::<><>::
+BoostGem4.png::::-1::0::0::1::::<><>::
+BoostGem5.png::::-1::0::0::1::::<><>::
+BoostGem.gd::GDScript::-1::1677328980::0::1::::<>RefCounted<>::
+::res://Objects/Cloud Platform/::1678280933
+Cloud Platform.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/Cloud Platform/Assets/::1678280933
+Cloud.png::::-1::0::0::1::::<><>::
+::res://Objects/Coin/::1678280933
+Coin.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/Coin/Assets/::1678280933
+Coin.gd::GDScript::-1::1677328979::0::1::::<>RefCounted<>::
+Coin.png::::-1::0::0::1::::<><>::
+Pickup_Coin.wav::::-1::0::0::1::::<><>::
+::res://Objects/DeathTrigger/::1678280933
+DeathTrigger.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/DeathTrigger/Assets/::1678280933
+DeathTrigger.gd::GDScript::-1::1677328979::0::1::::<>RefCounted<>::
+Hit_Hurt.wav::::-1::0::0::1::::<><>::
+::res://Objects/DialogArea/::1678280933
+DialogArea.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/DialogArea/Assets/::1678280933
+DialogArea-DESKTOP-R9UCBR4.gd::GDScript::-1::1677328981::0::1::::<>RefCounted<>::
+DialogArea.gd::GDScript::-1::1677328982::0::1::::<>RefCounted<>::
+Gardener.png::::-1::0::0::1::::<><>::
+Ghost.png::::-1::0::0::1::::<><>::
+Girl.png::::-1::0::0::1::::<><>::
+Pinata.png::::-1::0::0::1::::<><>::
+Sign.png::::-1::0::0::1::::<><>::
+Stranger.png::::-1::0::0::1::::<><>::
+Winter Girl.png::::-1::0::0::1::::<><>::
+::res://Objects/GravityArea/::1678280933
+GravityArea.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/GravityArea/Assets/::1678280933
+GravityArea.gd::GDScript::-1::1677328982::0::1::::<>RefCounted<>::
+::res://Objects/Swing/::1678280933
+Swing.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/Swing/Assets/::1678280933
+Swing.gd::GDScript::-1::1677328979::0::1::::<>RefCounted<>::
+Swing.png::::-1::0::0::1::::<><>::
+::res://Objects/Teleporter/::1678280933
+TeleporterArea.tscn::PackedScene::-1::1677328974::0::1::::<><>::
+::res://Objects/Teleporter/Assets/::1678280933
+Door.png::::-1::0::0::1::::<><>::
+Jump Prompt.png::::-1::0::0::1::::<><>::
+TeleporterArea.gd::GDScript::-1::1677328981::0::1::::<>RefCounted<>::
+::res://Objects/Trampoline/::1678280933
+Trampoline.tscn::PackedScene::-1::1677328975::0::1::::<><>::
+::res://Objects/Trampoline/Assets/::1678280933
+BounceArea.gd::GDScript::-1::1677328982::0::1::::<>RefCounted<>::
+BounceArea.tscn::PackedScene::-1::1677328982::0::1::::<><>::
+Cloud.png::::-1::0::0::1::::<><>::
+Trampoline.gd::GDScript::-1::1677328982::0::1::::<>RefCounted<>::
+Trampoline.png::::-1::0::0::1::::<><>::
+::res://Objects/Wind/::1678280933
+Wind.tscn::PackedScene::-1::1677328975::0::1::::<><>::
+::res://Objects/Wind/Assets/::1678280933
+Wind.gd::GDScript::-1::1677328983::0::1::::<>RefCounted<>::
+::res://Player/::1678280934
+Player.tscn::PackedScene::-1::1677328964::0::1::::<><>::
+::res://Player/Assets/::1678280934
+Jump.wav::::-1::0::0::1::::<><>::
+Player Climb1.png::::-1::0::0::1::::<><>::
+Player Climb2.png::::-1::0::0::1::::<><>::
+Player Climb3.png::::-1::0::0::1::::<><>::
+Player Climb4.png::::-1::0::0::1::::<><>::
+Player Climb5.png::::-1::0::0::1::::<><>::
+Player Fall1.png::::-1::0::0::1::::<><>::
+Player Fall2.png::::-1::0::0::1::::<><>::
+Player Fall3.png::::-1::0::0::1::::<><>::
+Player Fall4.png::::-1::0::0::1::::<><>::
+Player Jump1.png::::-1::0::0::1::::<><>::
+Player Jump2.png::::-1::0::0::1::::<><>::
+Player Jump3.png::::-1::0::0::1::::<><>::
+Player Jump4.png::::-1::0::0::1::::<><>::
+Player Walk1.png::::-1::0::0::1::::<><>::
+Player Walk2.png::::-1::0::0::1::::<><>::
+Player Walk3.png::::-1::0::0::1::::<><>::
+Player Walk4.png::::-1::0::0::1::::<><>::
+Player.gd::GDScript::-1::1677328978::0::1::::<>RefCounted<>::
+Player.png::::-1::0::0::1::::<><>::
+::res://UI/::1678280933
+Black.png::::-1::0::0::1::::<><>::
+icon.png::::-1::0::0::1::::<><>::
+Menu-DESKTOP-R9UCBR4.tscn::PackedScene::-1::1677328963::0::1::::<><>::
+Menu.gd::GDScript::-1::1677328963::0::1::::<>RefCounted<>::
+Menu.tscn::PackedScene::-1::1677328964::0::1::::<><>::
+::res://UI/AnimatedButton/::1678280933
+AnimatedButton.gd::GDScript::-1::1677328975::0::1::::<>RefCounted<>::
+AnimatedButton.tres::::-1::1677328975::0::1::::<><>::
+AnimatedButton.tscn::PackedScene::-1::1677328975::0::1::::<><>::
+Click.wav::::-1::0::0::1::::<><>::
+Select.wav::::-1::0::0::1::::<><>::
+Unselect.wav::::-1::0::0::1::::<><>::
+::res://UI/CoinCounter/::1678280933
+CoinCounter.gd::GDScript::-1::1677328975::0::1::::<>RefCounted<>::
+CoinCounter.tscn::PackedScene::-1::1677328975::0::1::::<><>::
+Win.wav::::-1::0::0::1::::<><>::
+::res://UI/DialogBox/::1678280933
+DialogBox.gd::GDScript::-1::1677328976::0::1::::<>RefCounted<>::
+DialogBox.tscn::PackedScene::-1::1677328976::0::1::::<><>::
+::res://UI/Transition/::1678280933
+CircleCutout.gdshader::Shader::-1::1677328978::0::1::::<><>::
+Transition.gd::GDScript::-1::1677328978::0::1::::<>RefCounted<>::
+Transition.tscn::PackedScene::-1::1677328978::0::1::::<><>::
+::res://World/::1678280934
+Background.tres::::-1::1677328964::0::1::::<><>::
+Congrulations.gd::GDScript::-1::1677328964::0::1::::<>RefCounted<>::
+default_env.tres::::-1::1677328964::0::1::::<><>::
+Foreground.tres::::-1::1677328964::0::1::::<><>::
+icon.png::::-1::0::0::1::::<><>::
+Side Background.png::::-1::0::0::1::::<><>::
+Side World.png::::-1::0::0::1::::<><>::
+World.gd::GDScript::-1::1677328965::0::1::::<>RefCounted<>::
+World.tscn::PackedScene::-1::1677328965::0::1::::<><>::

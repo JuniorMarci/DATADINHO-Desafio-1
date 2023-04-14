@@ -1,0 +1,865 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://World/Background.tres" type="TileSet" id=1]
+[ext_resource path="res://Objects/DeathTrigger/DeathTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Coin/Coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/CoinCounter/CoinCounter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/DialogArea/Assets/Sign.png" type="Texture" id=6]
+[ext_resource path="res://Background/PgInicial.png" type="Texture" id=7]
+[ext_resource path="res://World/Foreground.tres" type="TileSet" id=8]
+[ext_resource path="res://Background/Inserir.png" type="Texture" id=9]
+[ext_resource path="res://UI/Transition/Transition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/World.gd" type="Script" id=11]
+[ext_resource path="res://Fonts/yoster.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://World/Congrulations.gd" type="Script" id=13]
+[ext_resource path="res://Background/LayPg.png" type="Texture" id=14]
+[ext_resource path="res://UI/DialogBox/DialogBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/DialogArea/DialogArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Background/Formulas.png" type="Texture" id=17]
+[ext_resource path="res://Background/Dados.png" type="Texture" id=18]
+[ext_resource path="res://Objects/Trampoline/Trampoline.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/BoostGem/BoostGem.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Background/Revisao.png" type="Texture" id=21]
+[ext_resource path="res://Background/Arquivo/Arquivo-PgInicial.png" type="Texture" id=22]
+
+[sub_resource type="DynamicFont" id=13]
+size = 72
+outline_size = 1
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Wobble"
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+
+[node name="World" type="Node2D"]
+position = Vector2( -3, 151 )
+script = ExtResource( 11 )
+
+[node name="Fase1" type="Sprite" parent="."]
+position = Vector2( 300, -370 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 22 )
+
+[node name="PgInicial" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 7 )
+
+[node name="Inserir" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 9 )
+
+[node name="LayPg" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 14 )
+
+[node name="Formulas" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 17 )
+
+[node name="Dados" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 18 )
+
+[node name="Revisao" type="Sprite" parent="."]
+visible = false
+position = Vector2( 574, 222 )
+scale = Vector2( 1, 1.25 )
+texture = ExtResource( 21 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldMap" type="TileMap" parent="."]
+visible = false
+position = Vector2( 2, 3 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -2818070, 0, 1, -2818069, 0, 1, -2818068, 0, 1, -2818067, 0, 1, -2818066, 0, 1, -2818065, 0, 1, -2818064, 0, 1, -2818063, 0, 1, -2818062, 0, 1, -2818061, 0, 1, -2818060, 0, 1, -2818059, 0, 1, -2818058, 0, 1, -2818057, 0, 1, -2818056, 0, 1, -2818055, 0, 1, -2818054, 0, 1, -2818053, 0, 1, -2818052, 0, 1, -2818051, 0, 1, -2818050, 0, 1, -2818049, 0, 1, -2883584, 0, 1, -2883583, 0, 1, -2883582, 0, 1, -2883581, 0, 1, -2883580, 0, 1, -2883579, 0, 1, -2883578, 0, 1, -2883577, 0, 1, -2883576, 0, 1, -2883575, 0, 1, -2883574, 0, 1, -2883573, 0, 1, -2883572, 0, 1, -2883571, 0, 1, -2883570, 0, 1, -2883569, 0, 1, -2883568, 0, 1, -2883567, 0, 1, -2883566, 0, 1, -2883565, 0, 1, -2883564, 0, 1, -2883563, 0, 1, -2883562, 0, 1, -2883561, 0, 1, -2883560, 0, 1, -2883559, 0, 1, -2883558, 0, 1, -2883557, 0, 1, -2883556, 0, 1, -2883555, 0, 1, -2883554, 0, 1, -2883553, 0, 1, -2883552, 0, 1, -2883551, 0, 1, -2883550, 0, 1, -2883549, 0, 1, -2883548, 0, 1, -2883547, 0, 1, -2883546, 0, 1, -2883545, 0, 1, -2883544, 0, 1, -2883543, 0, 1, -2883542, 0, 1, -2883541, 0, 1, -2883540, 0, 1, -2883539, 0, 1, -2883538, 0, 1, -2883537, 0, 1, -2883536, 0, 1, -2883535, 0, 1, -2883534, 0, 1, -2883533, 0, 1, -2883532, 0, 1, -2883531, 0, 1, -2883530, 0, 1, -2883529, 0, 1, -2883528, 0, 1, -2883527, 0, 1, -2883526, 0, 1, -2883525, 0, 1, -2883524, 0, 1, -2883523, 0, 1, -2883522, 0, 1, -2883521, 0, 1, -2883520, 0, 1, -2883519, 0, 1, -2883518, 0, 1, -2883517, 0, 1, -2883516, 0, 1, -2883515, 0, 1, -2883514, 0, 1, -2883513, 0, 1, -2883512, 0, 1, -2883511, 0, 1, -2883510, 0, 1, -2883509, 0, 1, -2883508, 0, 1, -2883507, 0, 1, -2883506, 0, 1, -2883505, 0, 1, -2883504, 0, 1, -2883503, 0, 1, -2883502, 0, 1, -2883501, 0, 1, -2883500, 0, 1, -2883499, 0, 1, -2883498, 0, 1, -2883497, 0, 1, -2883496, 0, 1, -2883495, 0, 1, -2883494, 0, 1, -2883493, 0, 1, -2883492, 0, 1, -2883491, 0, 1 )
+
+[node name="WorldMap2" type="TileMap" parent="."]
+visible = false
+position = Vector2( 2, 5 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -2621462, 0, 1, -2621461, 0, 1, -2621460, 0, 1, -2621459, 0, 1, -2621458, 0, 1, -2621457, 0, 1, -2621456, 0, 1, -2621455, 0, 1, -2621454, 0, 1, -2621453, 0, 1, -2621452, 0, 1, -2621451, 0, 1, -2621450, 0, 1, -2621449, 0, 1, -2621448, 0, 1, -2621447, 0, 1, -2621446, 0, 1, -2621445, 0, 1, -2621444, 0, 1, -2621443, 0, 1, -2621442, 0, 1, -2621441, 0, 1, -2686976, 0, 1, -2686975, 0, 1, -2686974, 0, 1, -2686973, 0, 1, -2686972, 0, 1, -2686971, 0, 1, -2686970, 0, 1, -2686969, 0, 1, -2686968, 0, 1, -2686967, 0, 1, -2686966, 0, 1, -2686965, 0, 1, -2686964, 0, 1, -2686963, 0, 1, -2686962, 0, 1, -2686961, 0, 1, -2686960, 0, 1, -2686959, 0, 1, -2686958, 0, 1, -2686957, 0, 1, -2686956, 0, 1, -2686955, 0, 1, -2686954, 0, 1, -2686953, 0, 1, -2686952, 0, 1, -2686951, 0, 1, -2686950, 0, 1, -2686949, 0, 1, -2686948, 0, 1, -2686947, 0, 1, -2686946, 0, 1, -2686945, 0, 1, -2686944, 0, 1, -2686943, 0, 1, -2686942, 0, 1, -2686941, 0, 1, -2686940, 0, 1, -2686939, 0, 1, -2686938, 0, 1, -2686937, 0, 1, -2686936, 0, 1, -2686935, 0, 1, -2686934, 0, 1, -2686933, 0, 1, -2686932, 0, 1, -2686931, 0, 1, -2686930, 0, 1, -2686929, 0, 1, -2686928, 0, 1, -2686927, 0, 1, -2686926, 0, 1, -2686925, 0, 1, -2686924, 0, 1, -2686923, 0, 1, -2686922, 0, 1, -2686921, 0, 1, -2686920, 0, 1, -2686919, 0, 1, -2686918, 0, 1, -2686917, 0, 1, -2686916, 0, 1, -2686915, 0, 1, -2686914, 0, 1, -2686913, 0, 1, -2686912, 0, 1, -2686911, 0, 1, -2686910, 0, 1, -2686909, 0, 1, -2686908, 0, 1, -2686907, 0, 1, -2686906, 0, 1, -2686905, 0, 1, -2686904, 0, 1, -2686903, 0, 1, -2686902, 0, 1, -2686901, 0, 1, -2686900, 0, 1, -2686899, 0, 1, -2686898, 0, 1, -2686897, 0, 1, -2686896, 0, 1, -2686895, 0, 1, -2686894, 0, 1, -2686893, 0, 1, -2686892, 0, 1, -2686891, 0, 1, -2686890, 0, 1, -2686889, 0, 1, -2686888, 0, 1, -2686887, 0, 1, -2686886, 0, 1, -2686885, 0, 1, -2686884, 0, 1, -2686883, 0, 1 )
+
+[node name="Chao" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 917561, 1, 0, 917562, 1, 1, 917563, 1, 1, 917564, 1, 1, 917565, 1, 1, 917566, 1, 1, 917567, 1, 2, 983097, 1, 131072, 983098, 1, 131073, 983099, 1, 131073, 983100, 1, 131073, 983101, 1, 131073, 983102, 1, 131073, 983103, 1, 131074, 1048623, 1, 0, 1048624, 1, 1, 1048625, 1, 1, 1048626, 1, 1, 1048627, 1, 1, 1048628, 1, 2, 1114159, 1, 131072, 1114160, 1, 131073, 1114161, 1, 131073, 1114162, 1, 131073, 1114163, 1, 131073, 1114164, 1, 131074, 1376311, 1, 0, 1376312, 1, 1, 1376313, 1, 1, 1376314, 1, 1, 1376315, 1, 2, 1441847, 1, 131072, 1441848, 1, 131073, 1441849, 1, 131073, 1441850, 1, 131073, 1441851, 1, 131074, 1507374, 1, 0, 1507375, 1, 1, 1507376, 1, 1, 1507377, 1, 1, 1507378, 1, 1, 1507379, 1, 1, 1507380, 1, 2, 1572910, 1, 131072, 1572911, 1, 131073, 1572912, 1, 131073, 1572913, 1, 131073, 1572914, 1, 131073, 1572915, 1, 131073, 1572916, 1, 131074, 1638437, 1, 0, 1638438, 1, 1, 1638439, 1, 1, 1638440, 1, 1, 1638441, 1, 1, 1638442, 1, 1, 1638443, 1, 2, 1703973, 1, 131072, 1703974, 1, 131073, 1703975, 1, 131073, 1703976, 1, 131073, 1703977, 1, 131073, 1703978, 1, 131073, 1703979, 1, 131074, 1769497, 1, 0, 1769498, 1, 1, 1769499, 1, 1, 1769500, 1, 1, 1769501, 1, 1, 1769502, 1, 2, 1835020, 1, 0, 1835021, 1, 1, 1835022, 1, 1, 1835023, 1, 1, 1835024, 1, 1, 1835025, 1, 1, 1835026, 1, 2, 1835033, 1, 131072, 1835034, 1, 131073, 1835035, 1, 131073, 1835036, 1, 131073, 1835037, 1, 131073, 1835038, 1, 131074, 1900556, 1, 131072, 1900557, 1, 131073, 1900558, 1, 131073, 1900559, 1, 131073, 1900560, 1, 131073, 1900561, 1, 131073, 1900562, 1, 131074, 1966081, 1, 0, 1966082, 1, 1, 1966083, 1, 1, 1966084, 1, 1, 1966085, 1, 1, 1966086, 1, 1, 1966087, 1, 2, 2031617, 1, 131072, 2031618, 1, 131073, 2031619, 1, 131073, 2031620, 1, 131073, 2031621, 1, 131073, 2031622, 1, 131073, 2031623, 1, 131074, 2162684, 1, 0, 2162685, 1, 1, 2162686, 1, 1, 2162687, 1, 1, 2097152, 1, 1, 2097153, 1, 2, 2228220, 1, 131072, 2228221, 1, 131073, 2228222, 1, 131073, 2228223, 1, 131073, 2162688, 1, 131073, 2162689, 1, 131074, 2293750, 1, 0, 2293751, 1, 1, 2293752, 1, 1, 2293753, 1, 1, 2293754, 1, 1, 2293755, 1, 2, 2359286, 1, 131072, 2359287, 1, 131073, 2359288, 1, 131073, 2359289, 1, 131073, 2359290, 1, 131073, 2359291, 1, 131074, 2424810, 1, 0, 2424811, 1, 1, 2424812, 1, 1, 2424813, 1, 1, 2424814, 1, 1, 2424815, 1, 1, 2424816, 1, 1, 2424817, 1, 1, 2424818, 1, 1, 2424819, 1, 1, 2424820, 1, 1, 2424821, 1, 2, 2490346, 1, 131072, 2490347, 1, 131073, 2490348, 1, 131073, 2490349, 1, 131073, 2490350, 1, 131073, 2490351, 1, 131073, 2490352, 1, 131073, 2490353, 1, 131073, 2490354, 1, 131073, 2490355, 1, 131073, 2490356, 1, 131073, 2490357, 1, 131074 )
+
+[node name="Tab" type="TileMap" parent="."]
+visible = false
+position = Vector2( -2, 12 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2048
+collision_mask = 2048
+format = 1
+tile_data = PoolIntArray( 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0 )
+
+[node name="Objects" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DeathTrigger" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 420, 1299 )
+scale = Vector2( 512, 1 )
+
+[node name="Coin" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 919, 138 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin37" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, 101 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin38" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, 65 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin39" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, 32 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin40" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, 1 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin41" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -31 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin42" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -61 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin55" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin43" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -122 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin44" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -154 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin45" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -187 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin46" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -220 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin47" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -251 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin48" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -280 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin56" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin49" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -336 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin50" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -368 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin51" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -401 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin52" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -434 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin53" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -465 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin54" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 1006, -494 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin2" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 827, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin3" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 734, 138 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin4" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 643, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin5" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 548, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin6" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 456, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin7" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 363, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin8" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 272, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin9" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 178, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin10" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 86, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin11" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -7, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin12" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -98, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin13" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 919, -92 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin14" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 827, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin15" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 734, -92 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin16" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 643, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin17" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 548, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin18" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 456, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin19" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 363, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin20" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 272, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin21" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 178, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin22" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 86, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin23" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -7, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin24" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -98, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin25" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 919, -309 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin26" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 827, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin27" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 734, -309 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin28" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 643, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin29" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 548, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin30" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 456, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin31" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 363, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin32" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 272, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin33" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 178, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin34" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( 86, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin35" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -7, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin36" parent="Objects" groups=["moedas"] instance=ExtResource( 3 )]
+position = Vector2( -98, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Danger" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -936, 314 )
+scale = Vector2( 1, 8 )
+text = "DANGER!
+Don't climb any further"
+
+[node name="Aviso" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 1011, 216 )
+text = "Apos acessar a funcao de auto-soma, as moedas estarao colecionaveis"
+
+[node name="Danger2" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -545, -442 )
+scale = Vector2( 1, 8 )
+text = "DANGER!
+Don't climb any further"
+
+[node name="Danger3" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -978, 555 )
+scale = Vector2( 1, 8 )
+text = "Alterado com sucesso!"
+
+[node name="LibTab" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 1283, -693 )
+rotation = 1.5708
+scale = Vector2( 1, 6 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="ArquivoClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -356, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="PaginaCLique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -279, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+
+[node name="InserirClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -201, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 2.5 )
+
+[node name="LayPgClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -112, -793 )
+rotation = -1.5708
+scale = Vector2( 1, 6.5 )
+
+[node name="FormulasClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -12, -795 )
+rotation = -1.5708
+scale = Vector2( 1, 3.5 )
+
+[node name="DadosClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 55, -795 )
+rotation = -1.5708
+scale = Vector2( 1, 2.5 )
+
+[node name="RevisaoClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 115, -796 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="Nao" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -346, -893 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="Nao2" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 428, -795 )
+rotation = -1.5708
+scale = Vector2( 1, 35 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="Voltar" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 369, -643 )
+rotation = -1.5708
+scale = Vector2( 0.9, 90 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="BoostGem" parent="Objects" instance=ExtResource( 20 )]
+position = Vector2( -1434, 108 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -304, -770 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" parent="UI" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 53.0
+margin_top = 26.0
+margin_right = 139.0
+margin_bottom = 59.0
+
+[node name="Congrulations" type="Label" parent="UI"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+rect_pivot_offset = Vector2( 512, 64 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Congrulations"
+align = 1
+valign = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Congrulations"]
+autoplay = "Wobble"
+anims/RESET = SubResource( 14 )
+anims/Wobble = SubResource( 15 )
+
+[node name="Label" parent="UI" instance=ExtResource( 15 )]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -112.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="Transition" parent="UI" instance=ExtResource( 10 )]
+visible = false
+start_closed = true
+
+[node name="Trampoline3" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 511 )
+
+[node name="Trampoline62" parent="." instance=ExtResource( 19 )]
+position = Vector2( -813, 354 )
+
+[node name="Trampoline4" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 543 )
+
+[node name="Trampoline2" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 574 )
+
+[node name="Trampoline" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -375, 605 )
+
+[node name="Trampoline5" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 386 )
+
+[node name="Trampoline6" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 418 )
+
+[node name="Trampoline7" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 449 )
+
+[node name="Trampoline8" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 480 )
+
+[node name="Trampoline9" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 263 )
+
+[node name="Trampoline10" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 295 )
+
+[node name="Trampoline11" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 326 )
+
+[node name="Trampoline12" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 357 )
+
+[node name="Trampoline13" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 138 )
+
+[node name="Trampoline14" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 170 )
+
+[node name="Trampoline15" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 201 )
+
+[node name="Trampoline16" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 232 )
+
+[node name="Trampoline17" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 13 )
+
+[node name="Trampoline18" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 45 )
+
+[node name="Trampoline19" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 76 )
+
+[node name="Trampoline20" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -375, 107 )
+
+[node name="Trampoline42" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1137 )
+
+[node name="Trampoline43" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1169 )
+
+[node name="Trampoline44" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 1200 )
+
+[node name="Trampoline45" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -375, 1231 )
+
+[node name="Trampoline46" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1012 )
+
+[node name="Trampoline47" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1044 )
+
+[node name="Trampoline48" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1075 )
+
+[node name="Trampoline49" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 1106 )
+
+[node name="Trampoline50" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 889 )
+
+[node name="Trampoline51" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 921 )
+
+[node name="Trampoline52" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 952 )
+
+[node name="Trampoline53" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 983 )
+
+[node name="Trampoline54" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 764 )
+
+[node name="Trampoline55" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 796 )
+
+[node name="Trampoline56" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 827 )
+
+[node name="Trampoline57" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 858 )
+
+[node name="Trampoline58" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 639 )
+
+[node name="Trampoline59" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, 671 )
+
+[node name="Trampoline60" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, 702 )
+
+[node name="Trampoline61" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -375, 733 )
+
+[node name="Trampoline21" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -112 )
+
+[node name="Trampoline22" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -80 )
+
+[node name="Trampoline23" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -49 )
+
+[node name="Trampoline24" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -18 )
+
+[node name="Trampoline25" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -235 )
+
+[node name="Trampoline26" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -203 )
+
+[node name="Trampoline27" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -172 )
+
+[node name="Trampoline28" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, -141 )
+
+[node name="Trampoline29" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -360 )
+
+[node name="Trampoline30" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -328 )
+
+[node name="Trampoline31" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -297 )
+
+[node name="Trampoline32" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -266 )
+
+[node name="Trampoline33" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -392 )
+
+[node name="Trampoline34" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -515 )
+
+[node name="Trampoline35" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -483 )
+
+[node name="Trampoline36" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -452 )
+
+[node name="Trampoline37" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -376, -421 )
+
+[node name="Trampoline38" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -640 )
+
+[node name="Trampoline39" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -608 )
+
+[node name="Trampoline40" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -577 )
+
+[node name="Trampoline41" parent="." instance=ExtResource( 19 )]
+visible = false
+position = Vector2( -377, -546 )
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( 1011, 216 )
+texture = ExtResource( 6 )
+
+[connection signal="body_entered" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_entered2"]
+[connection signal="body_entered" from="Objects/Danger3" to="Player" method="_on_Danger3_body_entered"]
+[connection signal="body_exited" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_exited2"]
+[connection signal="body_exited" from="Objects/Danger3" to="Player" method="_on_Danger3_body_exited"]
+[connection signal="body_entered" from="Objects/LibTab" to="Objects/LibTab" method="_on_DialogArea_body_lib_tab_in"]
+[connection signal="body_exited" from="Objects/LibTab" to="Objects/LibTab" method="_on_DialogArea_body_lib_tab_out"]
+[connection signal="body_entered" from="Objects/ArquivoClique" to="Objects/ArquivoClique" method="_entrou_Arquivo"]
+[connection signal="body_exited" from="Objects/ArquivoClique" to="Objects/ArquivoClique" method="_saiu_Arquivo"]
+[connection signal="body_entered" from="Objects/PaginaCLique" to="Objects/PaginaCLique" method="_entrou_Pg_Inicial"]
+[connection signal="body_exited" from="Objects/PaginaCLique" to="Objects/PaginaCLique" method="_saiu_Pg_Inicial"]
+[connection signal="body_entered" from="Objects/InserirClique" to="Objects/InserirClique" method="_entrou_Inserir"]
+[connection signal="body_exited" from="Objects/InserirClique" to="Objects/InserirClique" method="_saiu_Inserir"]
+[connection signal="body_entered" from="Objects/LayPgClique" to="Objects/LayPgClique" method="_entrou_LayPg"]
+[connection signal="body_exited" from="Objects/LayPgClique" to="Objects/LayPgClique" method="_saiu_LayPg"]
+[connection signal="body_entered" from="Objects/FormulasClique" to="Objects/FormulasClique" method="_entrou_Formulas"]
+[connection signal="body_exited" from="Objects/FormulasClique" to="Objects/FormulasClique" method="_saiu_Formulas"]
+[connection signal="body_entered" from="Objects/DadosClique" to="Objects/DadosClique" method="_entrou_Dados"]
+[connection signal="body_exited" from="Objects/DadosClique" to="Objects/DadosClique" method="_saiu_Dados"]
+[connection signal="body_entered" from="Objects/RevisaoClique" to="Objects/RevisaoClique" method="_entrou_Revisao"]
+[connection signal="body_exited" from="Objects/RevisaoClique" to="Objects/RevisaoClique" method="_saiu_Revisao"]
+[connection signal="body_entered" from="Objects/Nao" to="Objects/Nao" method="_on_DialogArea_body_entered_nao"]
+[connection signal="body_exited" from="Objects/Nao" to="Objects/Nao" method="_on_DialogArea_body_exited_nao"]
+[connection signal="body_entered" from="Objects/Nao2" to="Objects/Nao2" method="_on_DialogArea_body_entered_nao"]
+[connection signal="body_exited" from="Objects/Nao2" to="Objects/Nao2" method="_on_DialogArea_body_exited_nao"]
+[connection signal="body_entered" from="Objects/Voltar" to="Objects/Voltar" method="_on_DialogArea_body_entered_voltar"]
+[connection signal="body_exited" from="Objects/Voltar" to="Objects/Voltar" method="_on_DialogArea_body_exited_voltar"]
