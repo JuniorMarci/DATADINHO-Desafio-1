@@ -361,6 +361,23 @@ collision_mask = 2048
 format = 1
 tile_data = PoolIntArray( 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0 )
 
+[node name="AcoesDesprotecao" type="Node2D" parent="."]
+position = Vector2( -356, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="PastaDeTrabalho" parent="AcoesDesprotecao" instance=ExtResource( 16 )]
+position = Vector2( -68.8878, 378.561 )
+scale = Vector2( -6.49923, 1.78353 )
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="Planilha" parent="AcoesDesprotecao" instance=ExtResource( 16 )]
+position = Vector2( -68.861, 351.5 )
+scale = Vector2( -6.49923, 1.4902 )
+collision_layer = 2048
+collision_mask = 2048
+
 [node name="Chaos cima-baixo" type="Node2D" parent="."]
 position = Vector2( -356, -794 )
 rotation = -1.5708
@@ -758,7 +775,7 @@ position = Vector2( -1434, 108 )
 position = Vector2( -292, 539 )
 scale = Vector2( 0.0888889, 0.0888889 )
 frames = SubResource( 16 )
-frame = 24
+frame = 36
 speed_scale = 3.0
 playing = true
 
@@ -1070,6 +1087,8 @@ texture = ExtResource( 24 )
 position = Vector2( -941, 510 )
 text = "A celula ou grafico que voce esta tentando alterar esta em uma planilha protegida. Para fazer uma alteracao, desproteja a planilha."
 
+[connection signal="body_exited" from="AcoesDesprotecao/PastaDeTrabalho" to="AcoesDesprotecao/PastaDeTrabalho" method="Desbloqueio_Pasta"]
+[connection signal="body_exited" from="AcoesDesprotecao/Planilha" to="AcoesDesprotecao/Planilha" method="Desbloqueio_Planilha"]
 [connection signal="body_entered" from="Chaos cima-baixo/TotalGeral" to="Chaos cima-baixo/TotalGeral" method="In_Chao_cima_baixo"]
 [connection signal="body_exited" from="Chaos cima-baixo/TotalGeral" to="Chaos cima-baixo/TotalGeral" method="Out_Chao_cima_baixo"]
 [connection signal="body_entered" from="Chaos cima-baixo/TotalGeral2022" to="Chaos cima-baixo/TotalGeral2022" method="In_Chao_cima_baixo"]

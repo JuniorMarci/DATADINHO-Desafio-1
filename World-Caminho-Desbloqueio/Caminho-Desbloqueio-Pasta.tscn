@@ -1,0 +1,544 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Objects/DeathTrigger/DeathTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World-Caminho-Desbloqueio/Caminho-Des-Pasta.gd" type="Script" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/CoinCounter/CoinCounter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/DialogArea/Assets/Sign.png" type="Texture" id=6]
+[ext_resource path="res://World/Foreground.tres" type="TileSet" id=8]
+[ext_resource path="res://UI/Transition/Transition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Coin/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fonts/yoster.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://World/Congrulations.gd" type="Script" id=13]
+[ext_resource path="res://UI/DialogBox/DialogBox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/DialogArea/DialogArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Trampoline/Trampoline.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/BoostGem/BoostGem.tscn" type="PackedScene" id=20]
+
+[sub_resource type="DynamicFont" id=13]
+size = 72
+outline_size = 1
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=14]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Wobble"
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+
+[node name="World" type="Node2D"]
+position = Vector2( -3, 151 )
+script = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Chao" type="TileMap" parent="."]
+position = Vector2( 0, 35 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 15 )
+cell_quadrant_size = 14
+format = 1
+tile_data = PoolIntArray( 917561, 1, 0, 917562, 1, 1, 917563, 1, 1, 917564, 1, 1, 917565, 1, 1, 917566, 1, 1, 917567, 1, 2, 983097, 1, 131072, 983098, 1, 131073, 983099, 1, 131073, 983100, 1, 131073, 983101, 1, 131073, 983102, 1, 131073, 983103, 1, 131074, 1048623, 1, 0, 1048624, 1, 1, 1048625, 1, 1, 1048626, 1, 1, 1048627, 1, 1, 1048628, 1, 2, 1114159, 1, 131072, 1114160, 1, 131073, 1114161, 1, 131073, 1114162, 1, 131073, 1114163, 1, 131073, 1114164, 1, 131074, 1376311, 1, 0, 1376312, 1, 1, 1376313, 1, 1, 1376314, 1, 1, 1376315, 1, 2, 1441847, 1, 131072, 1441848, 1, 131073, 1441849, 1, 131073, 1441850, 1, 131073, 1441851, 1, 131074, 1507374, 1, 0, 1507375, 1, 1, 1507376, 1, 1, 1507377, 1, 1, 1507378, 1, 1, 1507379, 1, 1, 1507380, 1, 2, 1572910, 1, 131072, 1572911, 1, 131073, 1572912, 1, 131073, 1572913, 1, 131073, 1572914, 1, 131073, 1572915, 1, 131073, 1572916, 1, 131074, 1638437, 1, 0, 1638438, 1, 1, 1638439, 1, 1, 1638440, 1, 1, 1638441, 1, 1, 1638442, 1, 1, 1638443, 1, 2, 1703973, 1, 131072, 1703974, 1, 131073, 1703975, 1, 131073, 1703976, 1, 131073, 1703977, 1, 131073, 1703978, 1, 131073, 1703979, 1, 131074, 1769497, 1, 0, 1769498, 1, 1, 1769499, 1, 1, 1769500, 1, 1, 1769501, 1, 1, 1769502, 1, 2, 1835020, 1, 0, 1835021, 1, 1, 1835022, 1, 1, 1835023, 1, 1, 1835024, 1, 1, 1835025, 1, 1, 1835026, 1, 2, 1835033, 1, 131072, 1835034, 1, 131073, 1835035, 1, 131073, 1835036, 1, 131073, 1835037, 1, 131073, 1835038, 1, 131074, 1900556, 1, 131072, 1900557, 1, 131073, 1900558, 1, 131073, 1900559, 1, 131073, 1900560, 1, 131073, 1900561, 1, 131073, 1900562, 1, 131074, 1966081, 1, 0, 1966082, 1, 1, 1966083, 1, 1, 1966084, 1, 1, 1966085, 1, 1, 1966086, 1, 1, 1966087, 1, 2, 2031617, 1, 131072, 2031618, 1, 131073, 2031619, 1, 131073, 2031620, 1, 131073, 2031621, 1, 131073, 2031622, 1, 131073, 2031623, 1, 131074, 2162684, 1, 0, 2162685, 1, 1, 2162686, 1, 1, 2162687, 1, 1, 2097152, 1, 1, 2097153, 1, 2, 2228220, 1, 131072, 2228221, 1, 131073, 2228222, 1, 131073, 2228223, 1, 131073, 2162688, 1, 131073, 2162689, 1, 131074, 2293750, 1, 0, 2293751, 1, 1, 2293752, 1, 1, 2293753, 1, 1, 2293754, 1, 1, 2293755, 1, 2, 2359286, 1, 131072, 2359287, 1, 131073, 2359288, 1, 131073, 2359289, 1, 131073, 2359290, 1, 131073, 2359291, 1, 131074, 2424810, 1, 0, 2424811, 1, 1, 2424812, 1, 1, 2424813, 1, 1, 2424814, 1, 1, 2424815, 1, 1, 2424816, 1, 1, 2424817, 1, 1, 2424818, 1, 1, 2424819, 1, 1, 2424820, 1, 1, 2424821, 1, 2, 2490346, 1, 131072, 2490347, 1, 131073, 2490348, 1, 131073, 2490349, 1, 131073, 2490350, 1, 131073, 2490351, 1, 131073, 2490352, 1, 131073, 2490353, 1, 131073, 2490354, 1, 131073, 2490355, 1, 131073, 2490356, 1, 131073, 2490357, 1, 131074 )
+
+[node name="Objects" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DeathTrigger" parent="Objects" instance=ExtResource( 2 )]
+position = Vector2( 420, 1299 )
+scale = Vector2( 512, 1 )
+
+[node name="Coin" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 919, 138 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin37" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, 101 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin38" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, 65 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin39" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, 32 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin40" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, 1 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin41" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -31 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin42" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -61 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin55" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin43" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -122 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin44" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -154 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin45" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -187 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin46" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -220 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin47" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -251 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin48" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -280 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin56" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin49" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -336 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin50" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -368 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin51" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -401 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin52" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -434 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin53" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -465 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin54" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 1006, -494 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin2" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 827, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin3" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 734, 138 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin4" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 643, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin5" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 548, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin6" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 456, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin7" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 363, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin8" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 272, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin9" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 178, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin10" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 86, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin11" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -7, 139 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin12" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -98, 140 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin13" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 919, -92 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin14" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 827, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin15" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 734, -92 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin16" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 643, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin17" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 548, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin18" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 456, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin19" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 363, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin20" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 272, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin21" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 178, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin22" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 86, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin23" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -7, -91 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin24" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -98, -90 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin25" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 919, -309 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin26" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 827, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin27" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 734, -309 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin28" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 643, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin29" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 548, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin30" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 456, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin31" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 363, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin32" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 272, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin33" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 178, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin34" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( 86, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin35" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -7, -308 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Coin36" parent="Objects" groups=["moedas"] instance=ExtResource( 11 )]
+position = Vector2( -98, -307 )
+collision_layer = 512
+collision_mask = 512
+
+[node name="Danger" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -936, 314 )
+scale = Vector2( 1, 8 )
+text = "DANGER!
+Don't climb any further"
+
+[node name="Aviso" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -151, 536 )
+text = "Liberte o Clippy da represalia dos usuarios fazendo uma auto-soma do total geral. Use \"Enter\" para marcar uma selecao da celula."
+
+[node name="Danger2" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -1023, 101 )
+scale = Vector2( 1, 8 )
+text = "DANGER!
+Don't climb any further"
+
+[node name="Danger3" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -978, 555 )
+scale = Vector2( 1, 8 )
+text = "Alterado com sucesso!"
+
+[node name="LibTab" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 719, -1273 )
+rotation = 1.5708
+scale = Vector2( 1, 6 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="ArquivoClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -356, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="PaginaCLique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -279, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+
+[node name="InserirClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -201, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 2.5 )
+
+[node name="LayPgClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -112, -793 )
+rotation = -1.5708
+scale = Vector2( 1, 6.5 )
+
+[node name="FormulasClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -12, -795 )
+rotation = -1.5708
+scale = Vector2( 1, 3.5 )
+
+[node name="DadosClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 55, -795 )
+rotation = -1.5708
+scale = Vector2( 1, 2.5 )
+
+[node name="RevisaoClique" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( 115, -796 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="Nao" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -346, -893 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="Nao2" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -561, -1256 )
+rotation = -1.5708
+scale = Vector2( 1, 35 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="Voltar" parent="Objects" instance=ExtResource( 16 )]
+position = Vector2( -120, -1281 )
+rotation = -1.5708
+scale = Vector2( 0.9, 90 )
+text = "Este nao eh o menu correto a se acessar."
+
+[node name="BoostGem" parent="Objects" instance=ExtResource( 20 )]
+position = Vector2( -1434, 108 )
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( -151, 536 )
+texture = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -183, 553 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CoinCounter" parent="UI" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 53.0
+margin_top = 26.0
+margin_right = 139.0
+margin_bottom = 59.0
+
+[node name="Congrulations" type="Label" parent="UI"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+rect_pivot_offset = Vector2( 512, 64 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Congrulations"
+align = 1
+valign = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Congrulations"]
+autoplay = "Wobble"
+anims/RESET = SubResource( 14 )
+anims/Wobble = SubResource( 15 )
+
+[node name="Label" parent="UI" instance=ExtResource( 15 )]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -112.0
+margin_right = -16.0
+margin_bottom = -16.0
+
+[node name="Transition" parent="UI" instance=ExtResource( 10 )]
+visible = false
+start_closed = true
+
+[node name="Trampoline62" parent="." instance=ExtResource( 19 )]
+position = Vector2( 73, 431 )
+
+[node name="Aviso" parent="." instance=ExtResource( 16 )]
+position = Vector2( -151, 536 )
+text = "Liberte o Clippy da represalia dos usuarios fazendo uma auto-soma do total geral. Use \"Enter\" para marcar uma selecao da celula."
+
+[connection signal="body_entered" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_entered2"]
+[connection signal="body_entered" from="Objects/Danger3" to="Player" method="_on_Danger3_body_entered"]
+[connection signal="body_exited" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_exited2"]
+[connection signal="body_exited" from="Objects/Danger3" to="Player" method="_on_Danger3_body_exited"]
+[connection signal="body_entered" from="Objects/LibTab" to="Objects/LibTab" method="_on_DialogArea_body_lib_tab_in"]
+[connection signal="body_exited" from="Objects/LibTab" to="Objects/LibTab" method="_on_DialogArea_body_lib_tab_out"]
+[connection signal="body_entered" from="Objects/ArquivoClique" to="Objects/ArquivoClique" method="_entrou_Arquivo"]
+[connection signal="body_exited" from="Objects/ArquivoClique" to="Objects/ArquivoClique" method="_saiu_Arquivo"]
+[connection signal="body_entered" from="Objects/PaginaCLique" to="Objects/PaginaCLique" method="_entrou_Pg_Inicial"]
+[connection signal="body_exited" from="Objects/PaginaCLique" to="Objects/PaginaCLique" method="_saiu_Pg_Inicial"]
+[connection signal="body_entered" from="Objects/InserirClique" to="Objects/InserirClique" method="_entrou_Inserir"]
+[connection signal="body_exited" from="Objects/InserirClique" to="Objects/InserirClique" method="_saiu_Inserir"]
+[connection signal="body_entered" from="Objects/LayPgClique" to="Objects/LayPgClique" method="_entrou_LayPg"]
+[connection signal="body_exited" from="Objects/LayPgClique" to="Objects/LayPgClique" method="_saiu_LayPg"]
+[connection signal="body_entered" from="Objects/FormulasClique" to="Objects/FormulasClique" method="_entrou_Formulas"]
+[connection signal="body_exited" from="Objects/FormulasClique" to="Objects/FormulasClique" method="_saiu_Formulas"]
+[connection signal="body_entered" from="Objects/DadosClique" to="Objects/DadosClique" method="_entrou_Dados"]
+[connection signal="body_exited" from="Objects/DadosClique" to="Objects/DadosClique" method="_saiu_Dados"]
+[connection signal="body_entered" from="Objects/RevisaoClique" to="Objects/RevisaoClique" method="_entrou_Revisao"]
+[connection signal="body_exited" from="Objects/RevisaoClique" to="Objects/RevisaoClique" method="_saiu_Revisao"]
+[connection signal="body_entered" from="Objects/Nao" to="Objects/Nao" method="_on_DialogArea_body_entered_nao"]
+[connection signal="body_exited" from="Objects/Nao" to="Objects/Nao" method="_on_DialogArea_body_exited_nao"]
+[connection signal="body_entered" from="Objects/Nao2" to="Objects/Nao2" method="_on_DialogArea_body_entered_nao"]
+[connection signal="body_exited" from="Objects/Nao2" to="Objects/Nao2" method="_on_DialogArea_body_exited_nao"]
+[connection signal="body_entered" from="Objects/Voltar" to="Objects/Voltar" method="_on_DialogArea_body_entered_voltar"]
+[connection signal="body_exited" from="Objects/Voltar" to="Objects/Voltar" method="_on_DialogArea_body_exited_voltar"]

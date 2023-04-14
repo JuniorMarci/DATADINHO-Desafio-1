@@ -27,6 +27,12 @@ func _on_DialogArea_body_exited2(body):
 #Início da configuração dos menus
 #-----------------------------------------------------------------------
 
+
+#Combinado:
+#  "_entrou_" só usa para desativar as camadas doutras guias
+#  "_saiu_" só usa para ativar as camadas desta guia
+
+
 func _saiu_Pg_Inicial(body):
 	$"../../Fase1".visible = false
 	$"../../Inserir".visible = false
@@ -49,6 +55,8 @@ func _entrou_Pg_Inicial(body):
 	$"../../WorldMap2".set_collision_layer(1)
 	$"../Voltar".set_collision_layer(1)
 	$"../LibTab".set_collision_layer(1)
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_Inserir(body):
@@ -73,6 +81,8 @@ func _entrou_Inserir(body):
 	$"../../WorldMap2".set_collision_layer(1)
 	$"../Voltar".set_collision_layer(1)
 	$"../LibTab".set_collision_layer(1)
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_LayPg(body):
@@ -97,6 +107,8 @@ func _entrou_LayPg(body):
 	$"../../WorldMap2".set_collision_layer(1)
 	$"../Voltar".set_collision_layer(1)
 	$"../LibTab".set_collision_layer(1)
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_Formulas(body):
@@ -121,6 +133,8 @@ func _entrou_Formulas(body):
 	$"../../WorldMap2".set_collision_layer(1)
 	$"../Voltar".set_collision_layer(1)
 	$"../LibTab".set_collision_layer(1)
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_Dados(body):
@@ -145,6 +159,8 @@ func _entrou_Dados(body):
 	$"../../WorldMap2".set_collision_layer(1)
 	$"../Voltar".set_collision_layer(1)
 	$"../LibTab".set_collision_layer(1)
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_Revisao(body):
@@ -155,6 +171,9 @@ func _saiu_Revisao(body):
 	$"../../Formulas".visible = false
 	$"../../Dados".visible = false
 	$"../../Revisao".visible = true
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(1)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(1)
+	
 	pass
 
 func _entrou_Revisao(body):
@@ -172,6 +191,8 @@ func _entrou_Revisao(body):
 	pass
 
 func _entrou_Arquivo(body):
+	$"../../AcoesDesprotecao/PastaDeTrabalho".set_collision_layer(2)
+	$"../../AcoesDesprotecao/Planilha".set_collision_layer(2)
 	pass
 
 func _saiu_Arquivo(body):
@@ -299,3 +320,15 @@ func Out_Chao_cima_baixo(body):
 	$"../../Total2021".set_collision_layer(12)
 	#$"../../Tab".visible = true
 	pass # Replace with function body.
+
+func Desbloqueio_Pasta(body):
+	Global.max_coins = 0
+	Global.current_coins = 0
+	Global.block_switch = true
+	var _error = get_tree().change_scene("res://World-Caminho-Desbloqueio/Caminho-Desbloqueio-Pasta.tscn")
+	
+func Desbloqueio_Planilha(body):
+	Global.max_coins = 0
+	Global.current_coins = 0
+	Global.block_switch = true
+	var _error = get_tree().change_scene("res://World-Caminho-Desbloqueio/Caminho-Desbloqueio-Pasta.tscn")	
