@@ -217,7 +217,7 @@ func _on_DialogArea_body_lib_tab_in(body):
 	$"../../Fase1".visible = true
 	$"../../Fase1+".visible = false
 	$"../../WorldMap2".set_collision_layer(2)
-	$"../../Tab".set_collision_layer(1)
+	#$"../../Tab".set_collision_layer(1)
 	$"../Coin".set_collision_layer(1)
 	$"../Coin2".set_collision_layer(1)
 	$"../Coin3".set_collision_layer(1)
@@ -282,4 +282,20 @@ func _on_DialogArea_body_lib_tab_in(body):
 
 func _on_DialogArea_body_lib_tab_out(body):
 	$"../LibTab".set_collision_layer(2)
+	pass # Replace with function body.
+
+
+func In_Chao_cima_baixo(body):
+	$"../../TotalGeral".set_collision_layer(1)
+	$"../../Total2022".set_collision_layer(1)
+	$"../../Total2021".set_collision_layer(1)
+	#$"../../Tab".visible = false
+	pass # Replace with function body.
+
+
+func Out_Chao_cima_baixo(body):
+	$"../../TotalGeral".set_collision_layer(12)
+	$"../../Total2022".set_collision_layer(12)
+	$"../../Total2021".set_collision_layer(12)
+	#$"../../Tab".visible = true
 	pass # Replace with function body.

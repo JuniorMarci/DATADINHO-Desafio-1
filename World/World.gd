@@ -42,4 +42,3 @@ func calculate_switch_blocks():
 
 func Despedida():
 	transition.close(1.0)
-

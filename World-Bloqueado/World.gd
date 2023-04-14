@@ -23,7 +23,11 @@ func _unhandled_input(_event):
 		var player = get_node("Player")
 		marca_img.position = player.position
 		marca_area.position = player.position
-
+		
+		var dialog_area = get_node("DialogArea")
+		dialog_area.Aviso_celula_bloqueada(get_node("Player"))
+		
+		
 func calculate_switch_blocks():
 	if Global.block_switch:
 		#4 to 2

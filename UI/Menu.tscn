@@ -223,8 +223,8 @@ position = Vector2( 172, 120 )
 position = Vector2( 248, 68 )
 
 [node name="DialogArea" parent="WorldMap" instance=ExtResource( 12 )]
-position = Vector2( 200, 120 )
-text = "BORA POTENCIALIZAR A CARREIRA!!"
+position = Vector2( 216, 104 )
+text = "DESENVOLVIDO POR JUNIOR, O MARCIO"
 
 [node name="Sign" type="Sprite" parent="WorldMap/DialogArea"]
 texture = ExtResource( 11 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=190 format=2]
 
 [ext_resource path="res://World/Background.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/DeathTrigger/DeathTrigger.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://World/Foreground.tres" type="TileSet" id=8]
 [ext_resource path="res://Background/Bloqueado/LayPg.png" type="Texture" id=9]
 [ext_resource path="res://UI/Transition/Transition.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/World.gd" type="Script" id=11]
+[ext_resource path="res://World-Bloqueado/World.gd" type="Script" id=11]
 [ext_resource path="res://Fonts/yoster.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://World/Congrulations.gd" type="Script" id=13]
 [ext_resource path="res://Background/Bloqueado/Formulas.png" type="Texture" id=14]
@@ -24,6 +24,176 @@
 [ext_resource path="res://Background/Bloqueado/Fase1.png" type="Texture" id=22]
 [ext_resource path="res://Background/Conteúdos/1.png" type="Texture" id=23]
 [ext_resource path="res://World-Bloqueado/location-pointer-16x16.png" type="Texture" id=24]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-003.jpg" type="Texture" id=25]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-002.jpg" type="Texture" id=26]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-006.jpg" type="Texture" id=27]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-008.jpg" type="Texture" id=28]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-012.jpg" type="Texture" id=29]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-004.jpg" type="Texture" id=30]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-014.jpg" type="Texture" id=31]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-011.jpg" type="Texture" id=32]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-007.jpg" type="Texture" id=33]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-013.jpg" type="Texture" id=34]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-001.jpg" type="Texture" id=35]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-015.jpg" type="Texture" id=36]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-016.jpg" type="Texture" id=37]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-005.jpg" type="Texture" id=38]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-009.jpg" type="Texture" id=39]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-010.jpg" type="Texture" id=40]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-149.jpg" type="Texture" id=41]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-154.jpg" type="Texture" id=42]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-157.jpg" type="Texture" id=43]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-112.jpg" type="Texture" id=44]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-159.jpg" type="Texture" id=45]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-096.jpg" type="Texture" id=46]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-099.jpg" type="Texture" id=47]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-105.jpg" type="Texture" id=48]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-109.jpg" type="Texture" id=49]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-111.jpg" type="Texture" id=50]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-097.jpg" type="Texture" id=51]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-116.jpg" type="Texture" id=52]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-117.jpg" type="Texture" id=53]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-107.jpg" type="Texture" id=54]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-110.jpg" type="Texture" id=55]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-114.jpg" type="Texture" id=56]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-124.jpg" type="Texture" id=57]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-125.jpg" type="Texture" id=58]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-132.jpg" type="Texture" id=59]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-134.jpg" type="Texture" id=60]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-135.jpg" type="Texture" id=61]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-127.jpg" type="Texture" id=62]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-139.jpg" type="Texture" id=63]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-140.jpg" type="Texture" id=64]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-142.jpg" type="Texture" id=65]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-120.jpg" type="Texture" id=66]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-136.jpg" type="Texture" id=67]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-143.jpg" type="Texture" id=68]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-147.jpg" type="Texture" id=69]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-133.jpg" type="Texture" id=70]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-104.jpg" type="Texture" id=71]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-118.jpg" type="Texture" id=72]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-113.jpg" type="Texture" id=73]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-098.jpg" type="Texture" id=74]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-121.jpg" type="Texture" id=75]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-123.jpg" type="Texture" id=76]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-131.jpg" type="Texture" id=77]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-145.jpg" type="Texture" id=78]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-146.jpg" type="Texture" id=79]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-148.jpg" type="Texture" id=80]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-150.jpg" type="Texture" id=81]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-152.jpg" type="Texture" id=82]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-100.jpg" type="Texture" id=83]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-126.jpg" type="Texture" id=84]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-138.jpg" type="Texture" id=85]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-103.jpg" type="Texture" id=86]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-130.jpg" type="Texture" id=87]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-153.jpg" type="Texture" id=88]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-155.jpg" type="Texture" id=89]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-115.jpg" type="Texture" id=90]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-151.jpg" type="Texture" id=91]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-156.jpg" type="Texture" id=92]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-158.jpg" type="Texture" id=93]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-101.jpg" type="Texture" id=94]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-129.jpg" type="Texture" id=95]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-122.jpg" type="Texture" id=96]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-119.jpg" type="Texture" id=97]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-137.jpg" type="Texture" id=98]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-128.jpg" type="Texture" id=99]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-141.jpg" type="Texture" id=100]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-106.jpg" type="Texture" id=101]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-102.jpg" type="Texture" id=102]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-108.jpg" type="Texture" id=103]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-144.jpg" type="Texture" id=104]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-161.jpg" type="Texture" id=105]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-160.jpg" type="Texture" id=106]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-033.jpg" type="Texture" id=107]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-035.jpg" type="Texture" id=108]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-048.jpg" type="Texture" id=109]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-039.jpg" type="Texture" id=110]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-044.jpg" type="Texture" id=111]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-064.jpg" type="Texture" id=112]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-066.jpg" type="Texture" id=113]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-050.jpg" type="Texture" id=114]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-053.jpg" type="Texture" id=115]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-042.jpg" type="Texture" id=116]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-030.jpg" type="Texture" id=117]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-055.jpg" type="Texture" id=118]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-034.jpg" type="Texture" id=119]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-041.jpg" type="Texture" id=120]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-032.jpg" type="Texture" id=121]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-038.jpg" type="Texture" id=122]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-060.jpg" type="Texture" id=123]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-052.jpg" type="Texture" id=124]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-049.jpg" type="Texture" id=125]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-065.jpg" type="Texture" id=126]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-047.jpg" type="Texture" id=127]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-067.jpg" type="Texture" id=128]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-043.jpg" type="Texture" id=129]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-070.jpg" type="Texture" id=130]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-026.jpg" type="Texture" id=131]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-071.jpg" type="Texture" id=132]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-051.jpg" type="Texture" id=133]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-029.jpg" type="Texture" id=134]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-063.jpg" type="Texture" id=135]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-028.jpg" type="Texture" id=136]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-057.jpg" type="Texture" id=137]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-027.jpg" type="Texture" id=138]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-036.jpg" type="Texture" id=139]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-040.jpg" type="Texture" id=140]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-058.jpg" type="Texture" id=141]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-062.jpg" type="Texture" id=142]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-072.jpg" type="Texture" id=143]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-073.jpg" type="Texture" id=144]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-074.jpg" type="Texture" id=145]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-075.jpg" type="Texture" id=146]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-076.jpg" type="Texture" id=147]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-079.jpg" type="Texture" id=148]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-080.jpg" type="Texture" id=149]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-068.jpg" type="Texture" id=150]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-081.jpg" type="Texture" id=151]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-082.jpg" type="Texture" id=152]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-045.jpg" type="Texture" id=153]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-078.jpg" type="Texture" id=154]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-054.jpg" type="Texture" id=155]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-083.jpg" type="Texture" id=156]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-059.jpg" type="Texture" id=157]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-077.jpg" type="Texture" id=158]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-046.jpg" type="Texture" id=159]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-061.jpg" type="Texture" id=160]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-084.jpg" type="Texture" id=161]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-037.jpg" type="Texture" id=162]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-069.jpg" type="Texture" id=163]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-085.jpg" type="Texture" id=164]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-086.jpg" type="Texture" id=165]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-087.jpg" type="Texture" id=166]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-088.jpg" type="Texture" id=167]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-089.jpg" type="Texture" id=168]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-031.jpg" type="Texture" id=169]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-056.jpg" type="Texture" id=170]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-091.jpg" type="Texture" id=171]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-093.jpg" type="Texture" id=172]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-090.jpg" type="Texture" id=173]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-092.jpg" type="Texture" id=174]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-095.jpg" type="Texture" id=175]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-094.jpg" type="Texture" id=176]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-024.jpg" type="Texture" id=177]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-025.jpg" type="Texture" id=178]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-022.jpg" type="Texture" id=179]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-023.jpg" type="Texture" id=180]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-020.jpg" type="Texture" id=181]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-017.jpg" type="Texture" id=182]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-018.jpg" type="Texture" id=183]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-019.jpg" type="Texture" id=184]
+[ext_resource path="res://Clippy/Preso/ezgif-frame-021.jpg" type="Texture" id=185]
+
+[sub_resource type="SpriteFrames" id=16]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 35 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 38 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 28 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 182 ), ExtResource( 183 ), ExtResource( 184 ), ExtResource( 181 ), ExtResource( 185 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 177 ), ExtResource( 178 ), ExtResource( 131 ), ExtResource( 138 ), ExtResource( 136 ), ExtResource( 134 ), ExtResource( 117 ), ExtResource( 169 ), ExtResource( 121 ), ExtResource( 107 ), ExtResource( 119 ), ExtResource( 108 ), ExtResource( 139 ), ExtResource( 162 ), ExtResource( 122 ), ExtResource( 110 ), ExtResource( 140 ), ExtResource( 120 ), ExtResource( 116 ), ExtResource( 129 ), ExtResource( 111 ), ExtResource( 153 ), ExtResource( 159 ), ExtResource( 127 ), ExtResource( 109 ), ExtResource( 125 ), ExtResource( 114 ), ExtResource( 133 ), ExtResource( 124 ), ExtResource( 115 ), ExtResource( 155 ), ExtResource( 118 ), ExtResource( 170 ), ExtResource( 137 ), ExtResource( 141 ), ExtResource( 157 ), ExtResource( 123 ), ExtResource( 160 ), ExtResource( 142 ), ExtResource( 135 ), ExtResource( 112 ), ExtResource( 126 ), ExtResource( 113 ), ExtResource( 128 ), ExtResource( 150 ), ExtResource( 163 ), ExtResource( 130 ), ExtResource( 132 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 158 ), ExtResource( 154 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 151 ), ExtResource( 152 ), ExtResource( 156 ), ExtResource( 161 ), ExtResource( 164 ), ExtResource( 165 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 173 ), ExtResource( 171 ), ExtResource( 174 ), ExtResource( 172 ), ExtResource( 176 ), ExtResource( 175 ), ExtResource( 46 ), ExtResource( 51 ), ExtResource( 74 ), ExtResource( 47 ), ExtResource( 83 ), ExtResource( 94 ), ExtResource( 102 ), ExtResource( 86 ), ExtResource( 71 ), ExtResource( 48 ), ExtResource( 101 ), ExtResource( 54 ), ExtResource( 103 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 90 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 72 ), ExtResource( 97 ), ExtResource( 66 ), ExtResource( 75 ), ExtResource( 96 ), ExtResource( 76 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 84 ), ExtResource( 62 ), ExtResource( 99 ), ExtResource( 95 ), ExtResource( 87 ), ExtResource( 77 ), ExtResource( 59 ), ExtResource( 70 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 67 ), ExtResource( 98 ), ExtResource( 85 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 100 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 104 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 69 ), ExtResource( 80 ), ExtResource( 41 ), ExtResource( 81 ), ExtResource( 91 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 42 ), ExtResource( 89 ), ExtResource( 92 ), ExtResource( 43 ), ExtResource( 93 ), ExtResource( 45 ), ExtResource( 106 ), ExtResource( 105 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 45 ), ExtResource( 93 ), ExtResource( 43 ), ExtResource( 92 ), ExtResource( 42 ), ExtResource( 69 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 82 ), ExtResource( 91 ), ExtResource( 81 ), ExtResource( 41 ), ExtResource( 80 ), ExtResource( 79 ), ExtResource( 78 ), ExtResource( 104 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 100 ), ExtResource( 63 ), ExtResource( 85 ), ExtResource( 98 ), ExtResource( 67 ), ExtResource( 61 ), ExtResource( 70 ), ExtResource( 60 ), ExtResource( 59 ), ExtResource( 77 ), ExtResource( 87 ), ExtResource( 95 ), ExtResource( 99 ), ExtResource( 84 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 57 ), ExtResource( 76 ), ExtResource( 96 ), ExtResource( 75 ), ExtResource( 97 ), ExtResource( 66 ), ExtResource( 72 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 90 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 73 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 49 ), ExtResource( 103 ), ExtResource( 54 ), ExtResource( 101 ), ExtResource( 54 ), ExtResource( 48 ), ExtResource( 71 ), ExtResource( 86 ), ExtResource( 102 ), ExtResource( 94 ), ExtResource( 47 ), ExtResource( 174 ), ExtResource( 83 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 46 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 172 ), ExtResource( 171 ), ExtResource( 173 ), ExtResource( 168 ), ExtResource( 167 ), ExtResource( 166 ), ExtResource( 164 ), ExtResource( 165 ), ExtResource( 161 ), ExtResource( 156 ), ExtResource( 152 ), ExtResource( 151 ), ExtResource( 149 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=13]
 size = 72
@@ -131,12 +301,10 @@ texture = ExtResource( 21 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="BackgroundMap" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="WorldMap" type="TileMap" parent="."]
 visible = false
@@ -156,12 +324,14 @@ format = 1
 tile_data = PoolIntArray( -2621462, 0, 1, -2621461, 0, 1, -2621460, 0, 1, -2621459, 0, 1, -2621458, 0, 1, -2621457, 0, 1, -2621456, 0, 1, -2621455, 0, 1, -2621454, 0, 1, -2621453, 0, 1, -2621452, 0, 1, -2621451, 0, 1, -2621450, 0, 1, -2621449, 0, 1, -2621448, 0, 1, -2621447, 0, 1, -2621446, 0, 1, -2621445, 0, 1, -2621444, 0, 1, -2621443, 0, 1, -2621442, 0, 1, -2621441, 0, 1, -2686976, 0, 1, -2686975, 0, 1, -2686974, 0, 1, -2686973, 0, 1, -2686972, 0, 1, -2686971, 0, 1, -2686970, 0, 1, -2686969, 0, 1, -2686968, 0, 1, -2686967, 0, 1, -2686966, 0, 1, -2686965, 0, 1, -2686964, 0, 1, -2686963, 0, 1, -2686962, 0, 1, -2686961, 0, 1, -2686960, 0, 1, -2686959, 0, 1, -2686958, 0, 1, -2686957, 0, 1, -2686956, 0, 1, -2686955, 0, 1, -2686954, 0, 1, -2686953, 0, 1, -2686952, 0, 1, -2686951, 0, 1, -2686950, 0, 1, -2686949, 0, 1, -2686948, 0, 1, -2686947, 0, 1, -2686946, 0, 1, -2686945, 0, 1, -2686944, 0, 1, -2686943, 0, 1, -2686942, 0, 1, -2686941, 0, 1, -2686940, 0, 1, -2686939, 0, 1, -2686938, 0, 1, -2686937, 0, 1, -2686936, 0, 1, -2686935, 0, 1, -2686934, 0, 1, -2686933, 0, 1, -2686932, 0, 1, -2686931, 0, 1, -2686930, 0, 1, -2686929, 0, 1, -2686928, 0, 1, -2686927, 0, 1, -2686926, 0, 1, -2686925, 0, 1, -2686924, 0, 1, -2686923, 0, 1, -2686922, 0, 1, -2686921, 0, 1, -2686920, 0, 1, -2686919, 0, 1, -2686918, 0, 1, -2686917, 0, 1, -2686916, 0, 1, -2686915, 0, 1, -2686914, 0, 1, -2686913, 0, 1, -2686912, 0, 1, -2686911, 0, 1, -2686910, 0, 1, -2686909, 0, 1, -2686908, 0, 1, -2686907, 0, 1, -2686906, 0, 1, -2686905, 0, 1, -2686904, 0, 1, -2686903, 0, 1, -2686902, 0, 1, -2686901, 0, 1, -2686900, 0, 1, -2686899, 0, 1, -2686898, 0, 1, -2686897, 0, 1, -2686896, 0, 1, -2686895, 0, 1, -2686894, 0, 1, -2686893, 0, 1, -2686892, 0, 1, -2686891, 0, 1, -2686890, 0, 1, -2686889, 0, 1, -2686888, 0, 1, -2686887, 0, 1, -2686886, 0, 1, -2686885, 0, 1, -2686884, 0, 1, -2686883, 0, 1 )
 
 [node name="Chao" type="TileMap" parent="."]
+position = Vector2( 0, 35 )
 tile_set = ExtResource( 8 )
-cell_size = Vector2( 16, 16 )
+cell_size = Vector2( 16, 15 )
+cell_quadrant_size = 14
 format = 1
 tile_data = PoolIntArray( 917561, 1, 0, 917562, 1, 1, 917563, 1, 1, 917564, 1, 1, 917565, 1, 1, 917566, 1, 1, 917567, 1, 2, 983097, 1, 131072, 983098, 1, 131073, 983099, 1, 131073, 983100, 1, 131073, 983101, 1, 131073, 983102, 1, 131073, 983103, 1, 131074, 1048623, 1, 0, 1048624, 1, 1, 1048625, 1, 1, 1048626, 1, 1, 1048627, 1, 1, 1048628, 1, 2, 1114159, 1, 131072, 1114160, 1, 131073, 1114161, 1, 131073, 1114162, 1, 131073, 1114163, 1, 131073, 1114164, 1, 131074, 1376311, 1, 0, 1376312, 1, 1, 1376313, 1, 1, 1376314, 1, 1, 1376315, 1, 2, 1441847, 1, 131072, 1441848, 1, 131073, 1441849, 1, 131073, 1441850, 1, 131073, 1441851, 1, 131074, 1507374, 1, 0, 1507375, 1, 1, 1507376, 1, 1, 1507377, 1, 1, 1507378, 1, 1, 1507379, 1, 1, 1507380, 1, 2, 1572910, 1, 131072, 1572911, 1, 131073, 1572912, 1, 131073, 1572913, 1, 131073, 1572914, 1, 131073, 1572915, 1, 131073, 1572916, 1, 131074, 1638437, 1, 0, 1638438, 1, 1, 1638439, 1, 1, 1638440, 1, 1, 1638441, 1, 1, 1638442, 1, 1, 1638443, 1, 2, 1703973, 1, 131072, 1703974, 1, 131073, 1703975, 1, 131073, 1703976, 1, 131073, 1703977, 1, 131073, 1703978, 1, 131073, 1703979, 1, 131074, 1769497, 1, 0, 1769498, 1, 1, 1769499, 1, 1, 1769500, 1, 1, 1769501, 1, 1, 1769502, 1, 2, 1835020, 1, 0, 1835021, 1, 1, 1835022, 1, 1, 1835023, 1, 1, 1835024, 1, 1, 1835025, 1, 1, 1835026, 1, 2, 1835033, 1, 131072, 1835034, 1, 131073, 1835035, 1, 131073, 1835036, 1, 131073, 1835037, 1, 131073, 1835038, 1, 131074, 1900556, 1, 131072, 1900557, 1, 131073, 1900558, 1, 131073, 1900559, 1, 131073, 1900560, 1, 131073, 1900561, 1, 131073, 1900562, 1, 131074, 1966081, 1, 0, 1966082, 1, 1, 1966083, 1, 1, 1966084, 1, 1, 1966085, 1, 1, 1966086, 1, 1, 1966087, 1, 2, 2031617, 1, 131072, 2031618, 1, 131073, 2031619, 1, 131073, 2031620, 1, 131073, 2031621, 1, 131073, 2031622, 1, 131073, 2031623, 1, 131074, 2162684, 1, 0, 2162685, 1, 1, 2162686, 1, 1, 2162687, 1, 1, 2097152, 1, 1, 2097153, 1, 2, 2228220, 1, 131072, 2228221, 1, 131073, 2228222, 1, 131073, 2228223, 1, 131073, 2162688, 1, 131073, 2162689, 1, 131074, 2293750, 1, 0, 2293751, 1, 1, 2293752, 1, 1, 2293753, 1, 1, 2293754, 1, 1, 2293755, 1, 2, 2359286, 1, 131072, 2359287, 1, 131073, 2359288, 1, 131073, 2359289, 1, 131073, 2359290, 1, 131073, 2359291, 1, 131074, 2424810, 1, 0, 2424811, 1, 1, 2424812, 1, 1, 2424813, 1, 1, 2424814, 1, 1, 2424815, 1, 1, 2424816, 1, 1, 2424817, 1, 1, 2424818, 1, 1, 2424819, 1, 1, 2424820, 1, 1, 2424821, 1, 2, 2490346, 1, 131072, 2490347, 1, 131073, 2490348, 1, 131073, 2490349, 1, 131073, 2490350, 1, 131073, 2490351, 1, 131073, 2490352, 1, 131073, 2490353, 1, 131073, 2490354, 1, 131073, 2490355, 1, 131073, 2490356, 1, 131073, 2490357, 1, 131074 )
 
-[node name="Tab" type="TileMap" parent="."]
+[node name="TotalGeral" type="TileMap" parent="."]
 visible = false
 position = Vector2( -2, 12 )
 tile_set = ExtResource( 8 )
@@ -170,6 +340,46 @@ collision_layer = 2048
 collision_mask = 2048
 format = 1
 tile_data = PoolIntArray( 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0 )
+
+[node name="Total2022" type="TileMap" parent="."]
+visible = false
+position = Vector2( -1, -238 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2048
+collision_mask = 2048
+format = 1
+tile_data = PoolIntArray( 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0 )
+
+[node name="Total2021" type="TileMap" parent="."]
+visible = false
+position = Vector2( -1, -457 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 2048
+collision_mask = 2048
+format = 1
+tile_data = PoolIntArray( 720886, 3, 0, 720887, 3, 0, 720888, 3, 0, 720889, 3, 0, 720890, 3, 0, 720891, 3, 0, 720892, 3, 0, 720893, 3, 0, 720894, 3, 0, 720895, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 3, 0, 655389, 3, 0, 655390, 3, 0, 655391, 3, 0, 655392, 3, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 3, 0, 655398, 3, 0, 655399, 3, 0, 655400, 3, 0, 655401, 3, 0, 655402, 3, 0, 655403, 3, 0, 655404, 3, 0, 655405, 3, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655425, 3, 0 )
+
+[node name="Chaos cima-baixo" type="Node2D" parent="."]
+position = Vector2( -356, -794 )
+rotation = -1.5708
+scale = Vector2( 1, 3 )
+
+[node name="TotalGeral" parent="Chaos cima-baixo" instance=ExtResource( 16 )]
+position = Vector2( -958, 267 )
+rotation = 1.57081
+scale = Vector2( 25.4, 1 )
+
+[node name="TotalGeral2022" parent="Chaos cima-baixo" instance=ExtResource( 16 )]
+position = Vector2( -707, 267 )
+rotation = 1.57081
+scale = Vector2( 25.4, 1 )
+
+[node name="TotalGeral2021" parent="Chaos cima-baixo" instance=ExtResource( 16 )]
+position = Vector2( -488, 267 )
+rotation = 1.57081
+scale = Vector2( 25.4, 1 )
 
 [node name="Objects" type="Node2D" parent="."]
 __meta__ = {
@@ -467,8 +677,8 @@ text = "DANGER!
 Don't climb any further"
 
 [node name="Aviso" parent="Objects" instance=ExtResource( 16 )]
-position = Vector2( 1011, 216 )
-text = "Apos acessar a funcao de auto-soma, as moedas estarao colecionaveis"
+position = Vector2( -151, 536 )
+text = "Liberte o Clippy da represalia dos usuarios fazendo uma auto-soma do total geral. Use \"Enter\" para marcar uma selecao da celula."
 
 [node name="Danger2" parent="Objects" instance=ExtResource( 16 )]
 position = Vector2( -1023, 101 )
@@ -544,8 +754,20 @@ text = "Este nao eh o menu correto a se acessar."
 [node name="BoostGem" parent="Objects" instance=ExtResource( 20 )]
 position = Vector2( -1434, 108 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -292, 539 )
+scale = Vector2( 0.0888889, 0.0888889 )
+frames = SubResource( 16 )
+frame = 24
+speed_scale = 3.0
+playing = true
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( -151, 536 )
+texture = ExtResource( 6 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( -299, 562 )
+position = Vector2( -183, 553 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -592,10 +814,6 @@ margin_bottom = -16.0
 [node name="Transition" parent="UI" instance=ExtResource( 10 )]
 visible = false
 start_closed = true
-
-[node name="Sign" type="Sprite" parent="."]
-position = Vector2( 1011, 216 )
-texture = ExtResource( 6 )
 
 [node name="Trampoline3" parent="." instance=ExtResource( 19 )]
 visible = false
@@ -845,12 +1063,19 @@ visible = false
 position = Vector2( -377, -546 )
 
 [node name="Location-pointer-16X16" type="Sprite" parent="."]
-position = Vector2( -277, 562 )
+position = Vector2( -940, 510 )
 texture = ExtResource( 24 )
 
 [node name="Location-Area" parent="." instance=ExtResource( 16 )]
-position = Vector2( -278, 562 )
+position = Vector2( -941, 510 )
+text = "A celula ou grafico que voce esta tentando alterar esta em uma planilha protegida. Para fazer uma alteracao, desproteja a planilha."
 
+[connection signal="body_entered" from="Chaos cima-baixo/TotalGeral" to="Chaos cima-baixo/TotalGeral" method="In_Chao_cima_baixo"]
+[connection signal="body_exited" from="Chaos cima-baixo/TotalGeral" to="Chaos cima-baixo/TotalGeral" method="Out_Chao_cima_baixo"]
+[connection signal="body_entered" from="Chaos cima-baixo/TotalGeral2022" to="Chaos cima-baixo/TotalGeral2022" method="In_Chao_cima_baixo"]
+[connection signal="body_exited" from="Chaos cima-baixo/TotalGeral2022" to="Chaos cima-baixo/TotalGeral2022" method="Out_Chao_cima_baixo"]
+[connection signal="body_entered" from="Chaos cima-baixo/TotalGeral2021" to="Chaos cima-baixo/TotalGeral2021" method="In_Chao_cima_baixo"]
+[connection signal="body_exited" from="Chaos cima-baixo/TotalGeral2021" to="Chaos cima-baixo/TotalGeral2021" method="Out_Chao_cima_baixo"]
 [connection signal="body_entered" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_entered2"]
 [connection signal="body_entered" from="Objects/Danger3" to="Player" method="_on_Danger3_body_entered"]
 [connection signal="body_exited" from="Objects/Danger3" to="Objects/Danger3" method="_on_DialogArea_body_exited2"]

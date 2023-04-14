@@ -16,4 +16,4 @@ func _on_Load_timeout():
 	Global.max_coins = 0
 	Global.current_coins = 0
 	Global.block_switch = true
-	var _error = get_tree().change_scene("res://World/World.tscn")
+	var _error = get_tree().change_scene("res://World-Bloqueado/World.tscn")
